@@ -6,7 +6,10 @@ import LoanRouter from './src/routes/loanRouter.js';
 import ResRouter from './src/routes/reservationRouter.js';
 import fineRouter from './src/routes/fineRouter.js';
 import LibRouter from './src/routes/librarianRouter.js';
+import dotenv from 'dotenv';
 const app = express();
+dotenv.config();
+
 
 //constants
 const baseRouteUrl = "/api/v1/books";
@@ -18,7 +21,7 @@ const baseLibUrl = "/api/v1/librarians";
 
 
 const dbConnection = "mongodb+srv://destinyawisa:Anonymous080$$$@librarysystemapi.e9tpwly.mongodb.net/?retryWrites=true&w=majority&appName=LibrarySystemApi";
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 3000;
 
 //middleware
 app.use(express.json());

@@ -66,3 +66,21 @@ export async function getAllMemberFines(req, res){
         })
     }
 }
+
+
+//this is an admin level access end-point
+export async function getAllFines(req, res){
+    try{
+
+        const fines = await FineModel.find({});
+
+        res.status(200).send({
+            message:"successful",
+            fines:fines,
+        })
+
+    }catch(e){
+        res.status(500).send(e.message)
+
+    }
+}
